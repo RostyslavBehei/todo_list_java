@@ -111,6 +111,6 @@ public class TaskServiceImpl implements TaskManager {
 
     @Override
     public Task getTaskById(int id) {
-        return null;
+        return tasks.stream().filter(task -> task.getId() == id).findFirst().orElse(null);
     }
 }
